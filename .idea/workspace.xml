@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b42ff75-6aa8-4d9d-87fd-384b436f4626" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/aleatorio/u1.aleatorio" afterPath="$PROJECT_DIR$/aleatorio/u1.aleatorio" />
-      <change beforePath="$PROJECT_DIR$/aleatorio/u2.aleatorio" afterPath="$PROJECT_DIR$/aleatorio/u2.aleatorio" />
-      <change beforePath="$PROJECT_DIR$/aleatorio/u3.aleatorio" afterPath="$PROJECT_DIR$/aleatorio/u3.aleatorio" />
-      <change beforePath="$PROJECT_DIR$/aleatorio/u4.aleatorio" afterPath="$PROJECT_DIR$/aleatorio/u4.aleatorio" />
-      <change beforePath="$PROJECT_DIR$/aleatorio/u5.aleatorio" afterPath="$PROJECT_DIR$/aleatorio/u5.aleatorio" />
-      <change beforePath="$PROJECT_DIR$/algoritmos.py" afterPath="$PROJECT_DIR$/algoritmos.py" />
-      <change beforePath="$PROJECT_DIR$/colaborativo.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/colaborativo/teste.colaborativo" afterPath="$PROJECT_DIR$/colaborativo/teste.colaborativo" />
-      <change beforePath="$PROJECT_DIR$/principal.py" afterPath="$PROJECT_DIR$/principal.py" />
-    </list>
+    <list default="true" id="7b42ff75-6aa8-4d9d-87fd-384b436f4626" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
