@@ -32,7 +32,7 @@ def colaborativo():
     for i in range(1, 6):
         base = 'dadosParaTEP/u{0}.base'.format(i)
         baseTest = 'dadosParaTEP/u{0}.test'.format(i)
-        baseColaborativa = 'colaborativo/teste.colaborativo'.format(i)
+        baseColaborativa = 'colaborativo/u{0}.colaborativo'.format(i)
 
         arquivoColaborativo = open(baseColaborativa, "w")
         arquivo = open(base, "r")
@@ -45,7 +45,12 @@ def colaborativo():
         for i in range(0, read.__len__()):
             matriz[int(read[i][0])-1][int(read[i][1])-1] = int(read[i][2])
 
+        #ListaProximidade contem todas as proximidades calculadas
         listaProximidade = []
+
+        #Proximidade como um dicionario ira guardar a chave que eh o id do usuario com
+        #com o valor da similaridade para aquele usuario
+        #a posicao na listaProximidade eh referente ao id do usuario
         proximidade = {}
         for linha in range(0, 943):
             for linha2 in range(0, 943):
@@ -55,9 +60,9 @@ def colaborativo():
             listaProximidade.append(proximidade)
             proximidade = {}
 
-        for i in listaProximidade:
-            print(i)
-
+        #o dicionario vizinhos serve para guardar os 80 vizinhos mais proximos,
+        # guardando chave como id do usuario e valor a similaridade
+        # sera adicionado a uma nova lista de proximo
         vizinhos = {}
         listaProx2 = []
         for i in listaProximidade:
@@ -87,7 +92,10 @@ def colaborativo():
 
         retorno.append('{0}\t{1}\t{2}'.format(i, 'colaborativo', rmse(entrada, saida)))
     return retorno
-
+'''
+Calculo do erro.
+Recebe a lista da base de teste e a lista das notas que estao sendo preditas
+'''
 def rmse(listTest, listPred):
     somatorio = 0
     for i in range(0, listPred.__len__()):
@@ -96,8 +104,12 @@ def rmse(listTest, listPred):
 
     return math.sqrt(somatorio/listPred.__len__())
 
+'''
+Calculando os vizinhos mais proximos
+Recebe usuario1 e usuario2, realiza o calculo da similaridade dos cossenos
+para os usuario recebidos, quanto mais proximo de 1, mais proximo os pontos estao
+'''
 def calculoVizinhoMaisProximo(usuario1, usuario2):
-    print("calculando vizinho...")
     soma1 = 0
     for i in range(0, usuario1.__len__()):
         soma1 += usuario1[i] * usuario2[i]
@@ -112,9 +124,13 @@ def calculoVizinhoMaisProximo(usuario1, usuario2):
 
     return soma1 / (math.sqrt(norma1) * math.sqrt(norma2))
 
-
+'''
+Metodo responsavel por atribuir as notas para o algoritmo colaborativo
+Recebe como parametro o dicionario com os vizinhos mais proximos de um usuario
+a matriz com as pontuaçoes
+e o filme que esta sendo atribuido a nota
+'''
 def atribuirNota(dicionario, matriz, filme):
-    print("calculando nota...")
     chaves = dicionario.keys()
     soma1 = 0.0
     soma2 = 0.0
